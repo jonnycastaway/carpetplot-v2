@@ -106,9 +106,7 @@ export const CarpetPlotPanel: React.FC<Props> = ({ data, options, width, height 
     const dpr = window.devicePixelRatio || 1;
     const legendBottom = (options.legend.show && options.legend.placement === 'bottom') ? 30 : 0;
     const legendRight = (options.legend.show && options.legend.placement !== 'bottom') ? 30 : 0;
-    const leftPad = options.yAxis.show ? 60 : 10;
-    const rightPad = (options.legend.show && options.legend.placement !== 'bottom') ? 10 : leftPad;
-    const pad = { top: 20, right: rightPad, bottom: (options.xAxis.show ? 50 : 10) + legendBottom, left: leftPad };
+    const pad = { top: 20, right: 10, bottom: (options.xAxis.show ? 50 : 10) + legendBottom, left: (options.yAxis.show ? 45 : 10) };
     const plotWidth = width - pad.left - pad.right - legendRight;
     const plotHeight = height - pad.top - pad.bottom;
 
@@ -240,8 +238,8 @@ export const CarpetPlotPanel: React.FC<Props> = ({ data, options, width, height 
 
   const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
     if (!carpetData || !canvasRef.current || !containerRef.current) { setTooltip(null); return; }
-    const pad = { top: 20, left: 60 };
-    const pw = width - 80;
+    const pad = { top: 20, left: options.yAxis.show ? 45 : 10 };
+    const pw = width - pad.left - 10;
     const ph = height - 70;
     const { data: days } = carpetData;
     if (!days.length) return;
