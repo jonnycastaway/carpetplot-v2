@@ -3,11 +3,11 @@
 Ein modernes React-Plugin für Grafana 10+. Zeigt Zeitreihen als farbcodiertes Raster – ideal, um Verbrauchs- oder Erzeugungsmuster über mehrere Tage zu erkennen.
 
 | Tag → | 01.01 | 02.01 | 03.01 | … |
-|-------|-------|-------|-------|-----|
-| 0h    | █     | █     | █     | … |
-| 1h    | █     | █     | █     | … |
+|-------|-------|-------|-------|---|
+| 00:00 | █     | █     | █     | … |
+| 01:00 | █     | █     | █     | … |
 | …     | …     | …     | …     | … |
-| 23h   | █     | █     | █     | … |
+| 23:00 | █     | █     | █     | … |
 
 X-Achse = **Datum**, Y-Achse = **Stunde**, Farbe = **Messwert**.
 
