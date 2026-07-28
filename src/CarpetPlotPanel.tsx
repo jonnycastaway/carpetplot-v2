@@ -147,7 +147,7 @@ export const CarpetPlotPanel: React.FC<Props> = ({ data, options, width, height 
           const t = i / steps;
           const val = min + (max - min) * t;
           ctx.fillStyle = getColor(val, min, max, options);
-          ctx.fillRect(lx + (t * lw), ly, lw / steps + 1, lh);
+          ctx.fillRect(lx + (t * lw), ly, lw / steps, lh);
         }
         ctx.strokeStyle = theme.colors.border.weak;
         ctx.strokeRect(lx, ly, lw, lh);
@@ -178,7 +178,7 @@ export const CarpetPlotPanel: React.FC<Props> = ({ data, options, width, height 
           const t = i / steps;
           const val = min + (max - min) * t;
           ctx.fillStyle = getColor(val, min, max, options);
-          ctx.fillRect(lx, ly + lh - (t * lh), lw, lh / steps + 1);
+          ctx.fillRect(lx, ly + lh - (t * lh), lw, lh / steps);
         }
         ctx.strokeStyle = theme.colors.border.weak;
         ctx.strokeRect(lx, ly, lw, lh);
