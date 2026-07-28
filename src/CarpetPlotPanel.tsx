@@ -143,12 +143,17 @@ export const CarpetPlotPanel: React.FC<Props> = ({ data, options, width, height 
         const ly = height - legendBottom + 5;
         const lw = plotWidth;
         const lh = 12;
+        ctx.save();
+        ctx.beginPath();
+        ctx.rect(lx, ly, lw, lh);
+        ctx.clip();
         for (let i = 0; i <= steps; i++) {
           const t = i / steps;
           const val = min + (max - min) * t;
           ctx.fillStyle = getColor(val, min, max, options);
-          ctx.fillRect(lx + (t * lw), ly, lw / steps, lh);
+          ctx.fillRect(lx + (t * lw), ly, lw / steps + 1, lh);
         }
+        ctx.restore();
         ctx.strokeStyle = theme.colors.border.weak;
         ctx.strokeRect(lx, ly, lw, lh);
         ctx.fillStyle = theme.colors.text.primary;
@@ -174,12 +179,17 @@ export const CarpetPlotPanel: React.FC<Props> = ({ data, options, width, height 
         const ly = pad.top;
         const lh = plotHeight;
         const lw = 12;
+        ctx.save();
+        ctx.beginPath();
+        ctx.rect(lx, ly, lw, lh);
+        ctx.clip();
         for (let i = 0; i <= steps; i++) {
           const t = i / steps;
           const val = min + (max - min) * t;
           ctx.fillStyle = getColor(val, min, max, options);
-          ctx.fillRect(lx, ly + lh - (t * lh), lw, lh / steps);
+          ctx.fillRect(lx, ly + lh - (t * lh), lw, lh / steps + 1);
         }
+        ctx.restore();
         ctx.strokeStyle = theme.colors.border.weak;
         ctx.strokeRect(lx, ly, lw, lh);
         ctx.fillStyle = theme.colors.text.primary;
