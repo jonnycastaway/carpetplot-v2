@@ -10,7 +10,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'module.js',
     library: { type: 'amd' },
-    publicPath: '/public/plugins/jonnycastaway-carpetplot-panel-v2/',
+    publicPath: '/public/plugins/carpetplot-v2/',
     clean: false,
   },
   resolve: {

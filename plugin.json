@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
   "type": "panel",
   "name": "Carpet Plot v2",
-  "id": "jonnycastaway-carpetplot-panel-v2",
+  "id": "carpetplot-v2",
   "info": {
     "description": "Carpet plot panel plugin for Grafana - shows time series data as a color-coded grid",
     "author": {

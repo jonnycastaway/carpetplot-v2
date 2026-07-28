@@ -25,17 +25,17 @@ X-Achse = **Datum**, Y-Achse = **Stunde**, Farbe = **Messwert**.
 
 ```bash
 # Repository klonen
-git clone https://github.com/jonnycastaway/carpetplot-panel-v2.git
-cd carpetplot-panel-v2
+git clone https://github.com/jonnycastaway/carpetplot-v2.git carpet-panel-v2
+cd carpet-panel-v2
 
 # Plugin-Verzeichnis anlegen
-sudo mkdir -p /var/lib/grafana/plugins/jonnycastaway-carpetplot-panel-v2
+sudo mkdir -p /var/lib/grafana/plugins/carpetplot-v2
 
 # Nur die benötigten Dateien kopieren
-sudo cp plugin.json /var/lib/grafana/plugins/jonnycastaway-carpetplot-panel-v2/
-sudo cp dist/module.js /var/lib/grafana/plugins/jonnycastaway-carpetplot-panel-v2/
-sudo cp -r dist/img /var/lib/grafana/plugins/jonnycastaway-carpetplot-panel-v2/
-sudo chown -R grafana:grafana /var/lib/grafana/plugins/jonnycastaway-carpetplot-panel-v2/
+sudo cp plugin.json /var/lib/grafana/plugins/carpetplot-v2/
+sudo cp dist/module.js /var/lib/grafana/plugins/carpetplot-v2/
+sudo cp -r dist/img /var/lib/grafana/plugins/carpetplot-v2/
+sudo chown -R grafana:grafana /var/lib/grafana/plugins/carpetplot-v2/
 ```
 
 ## Unsigned Plugin erlauben
@@ -45,12 +45,12 @@ Da das Plugin nicht von Grafana signiert ist, muss es in der Konfiguration erlau
 ```ini
 # /etc/grafana/grafana.ini
 [plugins]
-allow_loading_unsigned_plugins = jonnycastaway-carpetplot-panel-v2
+allow_loading_unsigned_plugins = carpetplot-v2
 ```
 
 Bei Docker:
 ```bash
--e GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=jonnycastaway-carpetplot-panel-v2
+-e GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=carpetplot-v2
 ```
 
 ## Grafana neustarten
@@ -80,3 +80,7 @@ ISC – siehe `LICENSE`
 ## Danksagung
 
 Basiert auf dem ursprünglichen [grafana-carpetplot](https://github.com/petrslavotinek/grafana-carpetplot) von Petr Slavotinek.
+
+---
+
+**Repo**: https://github.com/jonnycastaway/carpetplot-v2
