@@ -1,0 +1,26 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "panel",
+  "name": "Carpet Plot v2",
+  "id": "jonnycastaway-carpetplot-panel-v2",
+  "info": {
+    "description": "Carpet plot panel plugin for Grafana - shows time series data as a color-coded grid",
+    "author": {
+      "name": "jonnycastaway",
+      "url": ""
+    },
+    "keywords": ["carpet", "plot", "panel", "heatmap"],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [],
+    "screenshots": [],
+    "version": "1.0.0",
+    "updated": "2026-07-27"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=10.0.0",
+    "plugins": []
+  }
+}
