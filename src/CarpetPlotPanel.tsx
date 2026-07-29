@@ -267,8 +267,8 @@ export const CarpetPlotPanel: React.FC<Props> = ({ data, options, width, height 
       {tooltip && options.tooltip.show && (
         <div style={{
           position: 'absolute',
-          left: tooltip.x > width - 120 ? tooltip.x - 120 : tooltip.x + 12,
-          top: tooltip.y > height - 60 ? tooltip.y - 50 : tooltip.y + 12,
+          left: tooltip.x > width - 120 ? Math.max(0, tooltip.x - 120) : tooltip.x + 12,
+          top: tooltip.y > height - 80 ? Math.max(0, tooltip.y - 60) : tooltip.y + 12,
           background: theme.colors.background.secondary,
           border: `1px solid ${theme.colors.border.medium}`,
           padding: '8px 12px', borderRadius: '4px', fontSize: '12px',
