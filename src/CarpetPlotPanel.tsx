@@ -238,9 +238,10 @@ export const CarpetPlotPanel: React.FC<Props> = ({ data, options, width, height 
 
   const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
     if (!carpetData || !canvasRef.current || !containerRef.current) { setTooltip(null); return; }
-    const pad = { top: 20, left: options.yAxis.show ? 45 : 10 };
+    const legendBottom = (options.legend.show && options.legend.placement === 'bottom') ? 30 : 0;
+    const pad = { top: 20, left: options.yAxis.show ? 45 : 10, bottom: (options.xAxis.show ? 50 : 10) + legendBottom };
     const pw = width - pad.left - 10;
-    const ph = height - 70;
+    const ph = height - pad.top - pad.bottom;
     const { data: days } = carpetData;
     if (!days.length) return;
     const cw = pw / days.length;
